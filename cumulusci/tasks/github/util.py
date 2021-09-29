@@ -164,6 +164,9 @@ class CommitDir(object):
             self.logger.info("[dry_run] Skipping creation of new tree")
         else:
             self.logger.info("Creating new tree")
+            print('init')
+            print(new_tree_list)
+            print('end')
             new_tree = self.repo.create_tree(new_tree_list, None)
             if not new_tree:
                 raise GithubException("Failed to create tree")
